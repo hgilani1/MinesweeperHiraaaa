@@ -1,0 +1,13 @@
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/bin/Debug/netcoreapp3.1/minesweeperHiraaaa.deps.json
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/bin/Debug/netcoreapp3.1/minesweeperHiraaaa.runtimeconfig.json
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/bin/Debug/netcoreapp3.1/minesweeperHiraaaa.runtimeconfig.dev.json
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/bin/Debug/netcoreapp3.1/minesweeperHiraaaa.dll
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/bin/Debug/netcoreapp3.1/minesweeperHiraaaa.pdb
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/obj/Debug/netcoreapp3.1/minesweeperHiraaaa.csproj.AssemblyReference.cache
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/obj/Debug/netcoreapp3.1/minesweeperHiraaaa.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/obj/Debug/netcoreapp3.1/minesweeperHiraaaa.AssemblyInfoInputs.cache
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/obj/Debug/netcoreapp3.1/minesweeperHiraaaa.AssemblyInfo.cs
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/obj/Debug/netcoreapp3.1/minesweeperHiraaaa.csproj.CoreCompileInputs.cache
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/obj/Debug/netcoreapp3.1/minesweeperHiraaaa.dll
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/obj/Debug/netcoreapp3.1/minesweeperHiraaaa.pdb
+/Users/hfgilani/Projects/desktop/minesweeperHiraaaa/minesweeperHiraaaa/obj/Debug/netcoreapp3.1/minesweeperHiraaaa.genruntimeconfig.cache
