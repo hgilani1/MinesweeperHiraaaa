@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace minesweeperHiraaaa
 {
@@ -6,7 +7,7 @@ namespace minesweeperHiraaaa
     {
         static void Main(string[] args)
         {
-            // Display the game title
+            
             Console.WriteLine("Welcome to Minesweeper!");
 
             // grid size
@@ -20,35 +21,9 @@ namespace minesweeperHiraaaa
                 for (int j = 0; j < grid_size; j++)
                     grid[i, j] = '.';
 
-            // Display the grid
-            for (int i = 0; i < grid_size; i++)
-            {
-                for (int j = 0; j < grid_size; j++)
-                    Console.Write(grid[i, j]);
-                Console.WriteLine();
-            }
-            Console.WriteLine();
+            Utils.Draw(grid_size, grid);
 
-            // Create a 1-D array to store the column numbers of mine in each row
-            int[] mines = new int[grid_size];
-
-            // Random number generator object
-            Random rnd = new Random();
-
-            // Iterate for the size of the grid
-            for (int i = 0; i < grid_size; i++)
-                // Random position of mine
-                mines[0] = rnd.Next(0, grid_size);
-            mines[1] = rnd.Next(0, grid_size);
-            mines[2] = rnd.Next(0, grid_size);
-            mines[3] = rnd.Next(0, grid_size);
-            mines[4] = rnd.Next(0, grid_size);
-            mines[5] = rnd.Next(0, grid_size);
-            mines[6] = rnd.Next(0, grid_size);
-            mines[7] = rnd.Next(0, grid_size);
-            mines[8] = rnd.Next(0, grid_size);
-            mines[9] = rnd.Next(0, grid_size);
-
+            
 
             // Variable
             // -1 indicate player lostc
@@ -58,6 +33,7 @@ namespace minesweeperHiraaaa
 
             while (game == 0)
             {
+                Utils.GenerateBomb(grid, grid_size);
                 // Ask for Coordinates
                 Console.Write("Enter your X coordinate: ");
                 int x = Convert.ToInt32(Console.ReadLine());
@@ -65,90 +41,83 @@ namespace minesweeperHiraaaa
                 int y = Convert.ToInt32(Console.ReadLine());
 
                 // Update the grid according to user input
-                if (mines[x] == y)
+                if (grid[x, y] == '*')  // replace mine to inside of your grid
                 {
-                    grid[x, y] = '*';
-
                     // Also update the value of game variable to -1 if player hit a mine
                     game = -1;
                 }
                 else
-                    grid[x, y] = '_';
-            }
+                {
+                    grid[x, y] = CountMineAroundCell(grid, x, y);
+                    //grid[x, y] = '.';
+                }
+                    
 
-                
+                //        
+                //Console.WriteLine('_');
+
+                Utils.Draw(grid_size, grid);
+            }
             
 
             // Display the updated grid and count the number of '_' symbols in the grid
-            int count = 0;
-            Console.WriteLine();
-            for (int i = 0; i < grid_size; i++)
-            {
-                for (int j = 0; j < grid_size; j++)
-                {
-                    Console.Write(grid[i, j]);
-                    if (grid[i, j] == '_')
-                        count++;
-                    //CountMineAroundCell(i,j);
-                    //Console.WriteLine($"There are {counter} bombs near you");
-                }
-                Console.WriteLine();
-            }
-
+            
 
             //Console.WriteLine(CountMinesRoundCell(counter));
 
             // Update the value of game variable to 1 if player won i.e. number of '_' symbols matches the grid size
-            if (count == grid_size)
-                game = 1;
+            //if (count == grid_size)
+            //    game = 1;
 
             // Display appropriate message if player won or hit a mine
             if (game == 1)
                 Console.WriteLine("You win!");
+            
             else if (game == -1)
                 Console.WriteLine("Boom! You hit a mine.");
-            //{
-            //Console.WriteLine($"There are {count} bombs near you");
-            //}
 
             // Check surrounding mines and display the amount of bombs nearby
-            static int CountMineAroundCell(char[,] grid, int x, int y)
-            {
-                int counter = 0;
-                if (grid[x - 1, y - 1] == '*')
-                {
-                    counter++;
-                }
-                else if (grid[x, y - 1] == '*')
-                {
-                    counter++;
-                }
-                else if (grid[x + 1, y] == '*')
-                {
-                    counter++;
-                }
-                else if (grid[x + 1, y] == '*')
-                {
-                    counter++;
-                }
-                else if (grid[x - 1, y + 1] == '*')
-                {
-                    counter++;
-                }
-                else if (grid[x, y + 1] == '*')
-                {
-                    counter++;
-                }
-                else if (grid[x + 1, y + 1] == '*')
-                {
-                    counter++;
-                }
+            
+        }
 
-                return counter++;
-                Console.WriteLine($"There are {counter++} bombs near you");
+        static char CountMineAroundCell(char[,] grid, int x, int y)
+        {
+            int counter = 0;
+            if (grid[x - 1, y - 1] == '*')
+            {
+                counter++;
+            }
+            if (grid[x, y - 1] == '*')
+            {
+                counter++;
+            }
+            if (grid[x + 1, y] == '*')
+            {
+                counter++;
+            }
+            if (grid[x + 1, y] == '*')
+            {
+                counter++;
+            }
+            if (grid[x - 1, y + 1] == '*')
+            {
+                counter++;
+            }
+            if (grid[x, y + 1] == '*')
+            {
+                counter++;
+            }
+            if (grid[x + 1, y + 1] == '*')
+            {
+                counter++;
             }
 
+
+            return counter.ToString().ToCharArray()[0];
+            Console.WriteLine($"There are {counter} bombs near you");
+            
         }
+
 
     }
 }
